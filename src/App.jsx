@@ -10,26 +10,6 @@ import firebase from './firebase'
 import { BrowserRouterHook } from './utils/use-router'
 const messaging=firebase.messaging();
 function App () {
-  useEffect(()=>{
-    
-    Notification.requestPermission().then((token)=>{
-      return messaging.getToken()
-    }).then(token=>{
-      console.log('Token: ',token)
-
-    }).catch((error)=>{
-      console.log(error);
-    })
-
-    
-    
-  },[])
-  useEffect(()=>{
-    messaging.onMessage((payload) => {
-      console.log('Message received. ', payload);
-      
-    });
-  },[])
   return (
     <BrowserRouterHook>
       <Switch>
