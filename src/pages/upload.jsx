@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 // import IndexCard from './index/mycard'
 import axios from 'axios'
 import {REACT_APP_API_URL} from './../api'
-import firebase from './../firebase'
+import firebase,{storageRef} from './../firebase'
 import Button from '@material-ui/core/Button'
 
 
@@ -109,12 +109,12 @@ const Upload = () => {
 
     
     console.log(video.name)
-   var storageRef=firebase.storage().ref('videos/'+video.name)
+   var storageRef=storageRef.child('videos/'+video.name)
    await storageRef.put(video).then((response)=>{
      console.log('Done',response)
    }).then(()=>{
      const getDUrl= async ()=>{
-      var dUrl=await firebase.storage().ref('videos/'+video.name).getDownloadURL()
+      var dUrl=await storageRef.child('videos/'+video.name).getDownloadURL()
       console.log(dUrl)
       setUrl(dUrl)
       let bod={
