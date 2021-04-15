@@ -4,7 +4,7 @@ export  const REACT_APP_API_URL='https://us-central1-samtv-7b912.cloudfunctions.
 export const Post = async(url,body,token) => {
   body=JSON.stringify(body)
   if (token){
-    token = JSON.parse(token);
+    //token = JSON.parse(token);
    const response = await fetch(`${REACT_APP_API_URL}` + '/' + url, {
       method: 'POST',
       headers: {
@@ -59,7 +59,7 @@ export const Put = async(url,body,token) => {
    
    body=JSON.stringify(body)
    if (token){
-     token = JSON.parse(token);
+     //token = JSON.parse(token);
     const response = await fetch(`${REACT_APP_API_URL}` + '/' + url, {
        method: 'PUT',
        headers: {
@@ -114,7 +114,7 @@ export const PostWithImage = async(url,body,token,img) => {
    
    body=JSON.stringify(body)
    if (token){
-     token = JSON.parse(token);
+    // token = JSON.parse(token);
     const response = await fetch(`${REACT_APP_API_URL}` + '/' + url, {
        method: 'POST',
        headers: {
