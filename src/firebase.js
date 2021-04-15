@@ -1,13 +1,5 @@
 import firebase from 'firebase'
 
-import 'firebase/messaging' 
-
-export const onMessageListener = () =>
-  new Promise((resolve) => {
-    firebase.messaging.onMessage((payload) => {
-      resolve(payload);
-    });
-});
 const config={
     apiKey: "AIzaSyDq5qYahCvucliWw6e-T4UIeILvD1NIz_8",
     authDomain: "samtv-7b912.firebaseapp.com",
