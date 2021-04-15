@@ -1,5 +1,5 @@
 import firebase from 'firebase'
-
+import 'firebase/storage'; 
 const config={
     apiKey: "AIzaSyDq5qYahCvucliWw6e-T4UIeILvD1NIz_8",
     authDomain: "samtv-7b912.firebaseapp.com",
