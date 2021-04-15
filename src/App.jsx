@@ -8,7 +8,6 @@ import Meeting from './pages/meeting'
 import firebase from './firebase'
 
 import { BrowserRouterHook } from './utils/use-router'
-const messaging=firebase.messaging();
 function App () {
   return (
     <BrowserRouterHook>
