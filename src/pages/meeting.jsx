@@ -451,8 +451,8 @@ const shutdown = () =>{
           <Tooltip title="quit">
             <div
               className="quit"
-              onClick={ async() => { 
-                   await recordWebcam.download();
+              onClick={ () => { 
+                   recordWebcam.download();
                    recordWebcam.close();
                    send();
                    localClient.leave().then(() => {
