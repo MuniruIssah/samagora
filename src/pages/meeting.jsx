@@ -154,13 +154,17 @@ const MeetingPage = () => {
 
 const send = async()=>{
   const t ="21221"
-  const url = "api/token"
-  console.log("step 1")
-  const body = {
-     token:t
-  }
-  console.log("step 2")
-  const sa = await Put(url,body)
+  await fetch(`${REACT_APP_API_URL}/api/token/`, {
+      method: 'PUT',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+     body:body
+    }).then((response)=>{
+      console.log('succeeded',response)
+    }).catch((error)=>{
+      console.log('failed',error.message)
+    })
  
 }
 
